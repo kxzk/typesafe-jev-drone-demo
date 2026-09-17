@@ -1,0 +1,84 @@
+<header class="topbar">
+  <h1><span class="brand">jev</span><span>Flight lab</span></h1>
+  <div class="connection">
+    <span id="connection-dot" class="status-dot"></span><span id="connection-text">Connecting</span
+    ><span class="model" id="model-name">jev-latest</span>
+  </div>
+</header>
+<main class="workspace">
+  <section class="flight-panel" aria-label="Drone simulation">
+    <div class="viewport">
+      <div id="scene"></div>
+      <div class="scene-toolbar">
+        <span id="flight-status" role="status">Ready</span>
+        <div class="camera-switch" role="group" aria-label="Camera">
+          <button data-camera="orbit" aria-pressed="true">Orbit</button>
+          <button data-camera="follow" aria-pressed="false">Follow</button>
+          <button data-camera="top" aria-pressed="false">Top</button>
+        </div>
+      </div>
+      <div class="scene-bottom">
+        <span id="checkpoint-count">0 / 4 checkpoints</span><span id="clearance"></span>
+      </div>
+      <div class="notice" id="notice" role="alert" hidden></div>
+    </div>
+    <dl class="telemetry">
+      <div>
+        <dt>Altitude</dt>
+        <dd><span id="altitude">—</span><small>m</small></dd>
+      </div>
+      <div>
+        <dt>Speed</dt>
+        <dd><span id="speed">—</span><small>m/s</small></dd>
+      </div>
+      <div>
+        <dt>Distance</dt>
+        <dd><span id="distance">—</span><small>m</small></dd>
+      </div>
+      <div>
+        <dt>Time</dt>
+        <dd id="flight-time">00:00</dd>
+      </div>
+    </dl>
+    <div class="flight-controls">
+      <button class="primary" id="start" disabled>Start flight</button>
+      <button id="reset" disabled>Reset</button>
+      <button id="obstacle" class="barrier-control" disabled>+ Barrier</button>
+    </div>
+  </section>
+  <aside class="decision-panel" aria-label="Jev navigation">
+    <header class="panel-title">
+      <h2>Navigation</h2>
+      <button id="inspect" class="text-button" disabled>Inspect</button>
+    </header>
+    <section class="decision-summary">
+      <strong id="chosen-action">Ready</strong>
+      <div class="decision-meta">
+        <span id="decision-number">Decision —</span><span id="latency">— ms</span>
+      </div>
+      <p id="decision-note" hidden></p>
+    </section>
+    <div class="probabilities" id="probability-bars" aria-label="Action probabilities"></div>
+    <dl class="model-readouts">
+      <div>
+        <dt>Confidence</dt>
+        <dd id="confidence">—</dd>
+      </div>
+      <div>
+        <dt>Obstructed</dt>
+        <dd id="obstructed">—</dd>
+      </div>
+      <div>
+        <dt>Interventions</dt>
+        <dd id="interventions">0</dd>
+      </div>
+    </dl>
+  </aside>
+</main>
+<dialog id="inspector" aria-labelledby="inspector-title">
+  <header>
+    <h2 id="inspector-title">Model input / output</h2>
+    <button id="close-inspector" aria-label="Close inspector">Close</button>
+  </header>
+  <pre id="payload"></pre>
+</dialog>

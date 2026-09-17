@@ -1,0 +1,25 @@
+{
+  "name": "jev-flight-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "format": "prettier --write frontend index.html vite.config.ts"
+  },
+  "dependencies": {
+    "three": "^0.180.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "@types/three": "^0.180.0",
+    "prettier": "^3.9.7",
+    "typescript": "^5.8.3",
+    "vite": "^7.1.0",
+    "vitest": "^5.0.1"
+  }
+}
